@@ -52,7 +52,7 @@ const App = () => {
     getCountriesData();
   }, []);
 
-  console.log(casesType);
+  // console.log(casesType);
 
   const onCountryChange = async (e) => {
     const countryCode = e.target.value;
@@ -84,7 +84,7 @@ const App = () => {
             >
               <MenuItem value="worldwide">Worldwide</MenuItem>
               {countries.map((country) => (
-                <MenuItem value={country.value}>{country.name}</MenuItem>
+                <MenuItem key={country.value + country.name} value={country.value}>{country.name}</MenuItem>
               ))}
             </Select>
           </FormControl>
